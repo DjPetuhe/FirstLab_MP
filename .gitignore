@@ -1,0 +1,14 @@
+
+*.sln
+
+firstTask/first/.vs/first/v16/
+
+firstTask/first/Debug/
+
+firstTask/first/first/Debug/
+
+*.filters
+
+*.vcxproj
+
+*.user
