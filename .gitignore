@@ -12,3 +12,15 @@ firstTask/first/first/Debug/
 *.vcxproj
 
 *.user
+
+secondTask/second/.vs/second/v16/
+
+secondTask/second/Debug/
+
+secondTask/second/Release/
+
+secondTask/second/second/Debug/
+
+secondTask/second/second/Release/second.tlog/
+
+secondTask/second/second/Release/
