@@ -49,6 +49,8 @@ endStopWordParse:
 	int* wordsAmount = new int[arrStartSize];
 	int currWordMax = arrStartSize;
 	int arrWordSize = 0;
+	int charsInWord;
+	string withSymbols;
 txtParse:
 	txtFile >> temp;
 	if (temp == "") goto endTxtParse;
@@ -62,6 +64,21 @@ txtParse:
 		i++;
 		goto removeCapLetters;
 	endCapLetters:
+		i = 0;
+		withSymbols = "";
+		charsInWord = 0;
+	removeSymbols:
+		if (temp[i] == ' ') goto endRemoveSymbols;
+		if ((temp[i] >= 97 && temp[i] <= 122) || (charsInWord > 0 && (temp[i + 1] >= 97 && temp[i + 1] <= 122) && (temp[i] == 39 || temp[i] == 96 || temp[i] == 45)))
+		{
+			charsInWord++;
+			withSymbols += temp[i];
+		}
+		i++;
+		goto removeSymbols;
+	endRemoveSymbols:
+		if (withSymbols == "") goto txtParse;
+		temp = withSymbols + " ";
 		i = 0;
 	checkStopWords:
 		if (i < arrStopWordSize)
